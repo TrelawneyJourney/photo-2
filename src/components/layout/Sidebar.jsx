@@ -1,17 +1,11 @@
 import Navbar from "../navbar/Navbar";
 import FooterNavbar from "../navbar/FooterNavbar";
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import { icons } from "../../assets/icons";
 
 export default function Sidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
   const MenuIcon = icons.Menu;
-
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [location]);
 
   const toggleMenu = () => {
     setMobileOpen((prev) => !prev);
@@ -37,7 +31,7 @@ export default function Sidebar() {
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <Navbar />
+        <Navbar onClickMobile={() => setMobileOpen(false)} />
         <FooterNavbar />
       </aside>
     </>

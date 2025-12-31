@@ -3,13 +3,14 @@ import { navLinks } from "../../data/data";
 import { useState } from "react";
 import { icons } from "../../assets/icons";
 
-export default function Navbar() {
+export default function Navbar({ onClickMobile }) {
   const ChevronIcon = icons.Chevron;
   const [linkOpen, setLinkOpen] = useState(true);
 
   const handleOnClick = () => {
     setLinkOpen((prev) => !prev);
   };
+
   return (
     <nav>
       <ul className="space-y-3">
@@ -49,6 +50,7 @@ export default function Navbar() {
                     >
                       <NavLink
                         to={child.to}
+                        onClick={onClickMobile}
                         className={({ isActive }) =>
                           `block text-sm transition-opacity ${
                             isActive
@@ -67,6 +69,7 @@ export default function Navbar() {
               // item simple
               <NavLink
                 to={item.to}
+                onClick={onClickMobile}
                 className={({ isActive }) =>
                   `text-xs uppercase tracking-widest transition-opacity ${
                     isActive
