@@ -4,7 +4,7 @@ export default function FooterNavbar() {
   const InstaIcon = icons.Instagram;
   const LinkedinIcon = icons.Linkedin;
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 mt-7">
       <a
         href="https://www.instagram.com/galacaradepala_fotografia/"
         target="_blank"

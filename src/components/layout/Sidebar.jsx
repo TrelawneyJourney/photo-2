@@ -1,5 +1,6 @@
 import Navbar from "../navbar/Navbar";
 import FooterNavbar from "../navbar/FooterNavbar";
+import Logo from "../navbar/Logo";
 import { useState } from "react";
 import { icons } from "../../assets/icons";
 
@@ -27,10 +28,11 @@ export default function Sidebar() {
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 p-6 space-y-10 bg-white duration-300 ease-out md:static md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 w-64 p-6 space-y-5 bg-white duration-300 ease-out md:static md:translate-x-0 ${
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
+        <Logo />
         <Navbar onClickMobile={() => setMobileOpen(false)} />
         <FooterNavbar />
       </aside>

@@ -13,7 +13,7 @@ export default function Navbar({ onClickMobile }) {
 
   return (
     <nav>
-      <ul className="space-y-3">
+      <ul className="space-y-1">
         {navLinks.map((item) => (
           <li key={item.label}>
             {/**item colapsable */}
@@ -32,9 +32,9 @@ export default function Navbar({ onClickMobile }) {
                 {/* muestra el submenu */}
                 <ul
                   id="projects-submenu"
-                  className={`ml-4 mt-2 space-y-2 overflow-hidden transition-all duration-300 ease-in-out ${
+                  className={`ml-4  space-y-2 overflow-hidden transition-all duration-300 ease-in-out ${
                     linkOpen
-                      ? "max-h-40 opacity-100 translate-y-0"
+                      ? "max-h-40 opacity-100 translate-y-0 mt-2"
                       : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
                   }`}
                 >
