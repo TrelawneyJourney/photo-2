@@ -5,7 +5,7 @@ export const navLinks = [
     label: "Proyectos",
     children: allProjects.map((project) => ({
       label: project.title,
-      to: `/projects/${project.slug},`,
+      to: `/projects/${project.slug}`,
     })),
   },
   {

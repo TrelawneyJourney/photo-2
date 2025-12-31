@@ -14,8 +14,11 @@ export default function Sidebar() {
 
   return (
     <>
-      <div>
-        <button onClick={toggleMenu} className="md:hidden p-4">
+      <div className="flex justify-between items-center md:hidden px-2">
+        <div className="px-4">
+          <Logo />
+        </div>
+        <button onClick={toggleMenu} className=" p-4">
           <MenuIcon />
         </button>
       </div>
