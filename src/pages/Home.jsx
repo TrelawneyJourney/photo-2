@@ -1,3 +1,19 @@
+import { useNavigate } from "react-router-dom";
+import PhotoGrid from "../components/gallery/PhotoGrid";
+import { allProjects } from "../data/projects";
+
 export default function Home() {
-  return <div>home</div>;
+  const navigate = useNavigate();
+
+  const projects = allProjects.flatMap((project) => project.photos);
+  if (!projects) return null;
+
+  return (
+    <div>
+      <PhotoGrid
+        images={projects}
+        onItemClick={(item) => navigate(`/projects/${item.slug}`)}
+      />
+    </div>
+  );
 }
