@@ -3,6 +3,7 @@ import LayoutContainer from "../components/layout/LayoutContainer";
 
 import Home from "../pages/Home";
 import ProjectDetail from "../pages/ProjectDetail";
+import Projects from "../pages/Projects";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 
@@ -12,7 +13,8 @@ export const router = createBrowserRouter(
       element: <LayoutContainer />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "/projects/:slug", element: <ProjectDetail /> },
+        { path: "/projects/:slug", element: <Projects /> },
+        { path: "/photoitem/:slug", element: <ProjectDetail /> },
 
         { path: "/about", element: <About /> },
         { path: "/contact", element: <Contact /> },

@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <PhotoGrid
         images={projects}
-        onItemClick={(item) => navigate(`/projects/${item.slug}`)}
+        onItemClick={(item) => navigate(`/photoitem/${item.slug}`)}
       />
     </div>
   );

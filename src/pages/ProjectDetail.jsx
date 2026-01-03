@@ -1,20 +1,19 @@
-import { useNavigate, useParams } from "react-router-dom";
-import PhotoGrid from "../components/gallery/PhotoGrid";
+import { useParams } from "react-router-dom";
 import { allProjects } from "../data/projects";
 
 export default function ProjectDetail() {
-  const navigate = useNavigate();
   const { slug } = useParams();
 
-  const projects = allProjects.find((p) => p.slug === slug);
-  if (!projects) return null;
+  const photos = allProjects.flatMap((p) => p.photos);
+  const photo = photos.find((p) => p.slug === slug);
+  if (!photo) return <p>Foto no encontrada</p>;
 
   return (
     <div>
-      <PhotoGrid
-        images={projects.photos}
-        onItemClick={(item) => navigate(`/projects/${item.slug}`)}
-      />
+      <img src={photo.src} alt={photo.alt} />
     </div>
   );
+}
+{
+  /**cambiar ruta navigate */
 }
