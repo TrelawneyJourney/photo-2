@@ -1,0 +1,80 @@
+export const estudioPhotos = [
+  {
+    id: 1,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-1.jpg`,
+    slug: "estudio-1",
+    alt: "estudio 1",
+  },
+  {
+    id: 2,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-2.jpg`,
+    slug: "estudio-2",
+    alt: "estudio 2",
+  },
+  {
+    id: 3,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-3.jpg`,
+    slug: "estudio-3",
+    alt: "estudio 3",
+  },
+  {
+    id: 4,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-4.jpg`,
+    slug: "estudio-4",
+    alt: "estudio 4",
+  },
+  {
+    id: 5,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-5.jpg`,
+    slug: "estudio-5",
+    alt: "estudio 5",
+  },
+  {
+    id: 6,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-6.jpg`,
+    slug: "estudio-6",
+    alt: "estudio 6",
+  },
+  {
+    id: 7,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-7.jpg`,
+    slug: "estudio-7",
+    alt: "estudio 7",
+  },
+  {
+    id: 8,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-8.jpg`,
+    slug: "estudio-8",
+    alt: "estudio 8",
+  },
+  {
+    id: 9,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-9.jpg`,
+    slug: "estudio-9",
+    alt: "estudio 9",
+  },
+  {
+    id: 10,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-10.jpg`,
+    slug: "estudio-10",
+    alt: "estudio 10",
+  },
+  {
+    id: 11,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-11.jpg`,
+    slug: "estudio-11",
+    alt: "estudio 11",
+  },
+  {
+    id: 12,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-12.jpg`,
+    slug: "estudio-12",
+    alt: "estudio 12",
+  },
+  {
+    id: 13,
+    src: `${import.meta.env.BASE_URL}images/projects/estudio/estudio-13.jpg`,
+    slug: "estudio-13",
+    alt: "estudio 13",
+  },
+];

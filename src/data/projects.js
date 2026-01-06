@@ -1,3 +1,4 @@
+import { estudioPhotos } from "./photos/estudio";
 import { galaPhotos } from "./photos/gala";
 import { marPhotos } from "./photos/mar";
 import { nochePhotos } from "./photos/noche";
@@ -20,5 +21,11 @@ export const allProjects = [
     slug: "noche",
     title: "Noche",
     photos: nochePhotos,
+  },
+  {
+    id: 4,
+    slug: "estudio",
+    title: "Estudio",
+    photos: estudioPhotos,
   },
 ];
