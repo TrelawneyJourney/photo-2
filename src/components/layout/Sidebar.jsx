@@ -7,6 +7,7 @@ import { icons } from "../../assets/icons";
 export default function Sidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const MenuIcon = icons.Menu;
+  const CrossIcon = icons.Cross;
 
   const toggleMenu = () => {
     setMobileOpen((prev) => !prev);
@@ -25,9 +26,13 @@ export default function Sidebar() {
 
       {mobileOpen && (
         <div
-          className="fixed inset-0 bg-black/30 z-30 md:hidden"
+          className="fixed inset-0 bg-black/30 z-30 md:hidden flex justify-end items-start p-4"
           onClick={toggleMenu}
-        />
+        >
+          <button onClick={toggleMenu}>
+            <CrossIcon />
+          </button>
+        </div>
       )}
 
       <aside

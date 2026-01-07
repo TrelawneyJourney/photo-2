@@ -1,7 +1,9 @@
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { allProjects } from "../data/projects";
+import { icons } from "../assets/icons";
 
 export default function ProjectDetail() {
+  const CrossIcon = icons.Cross;
   const { slug } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,7 +40,7 @@ export default function ProjectDetail() {
         className="absolute top-4 right-4 text-white text-2xl"
         onClick={handleClose}
       >
-        x
+        <CrossIcon />
       </button>
     </div>
   );

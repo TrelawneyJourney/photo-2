@@ -5,7 +5,7 @@ export default function Logo() {
         <img
           src={`${import.meta.env.BASE_URL}logo.png`}
           alt="Gala Fotografía Logo"
-          className="w-44"
+          className="w-36 md:w-44 "
         />
       </a>
     </div>
