@@ -27,7 +27,8 @@ export default function PhotoGrid({ images, onItemClick }) {
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-full transition-transform duration-500 group-hover:scale-105 object-cover "
+                  className="w-full h-full transition-transform duration-500 group-hover:scale-105 object-cover"
+                  loading="lazy"
                 />
               </button>
             ))}

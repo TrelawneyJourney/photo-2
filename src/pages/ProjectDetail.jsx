@@ -1,17 +1,26 @@
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { allProjects } from "../data/projects";
 import { icons } from "../assets/icons";
+import CarouselImg from "../components/gallery/CarouselImg";
 
 export default function ProjectDetail() {
   const CrossIcon = icons.Cross;
   const { slug } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const background = location.state?.background;
 
-  const photos = allProjects.flatMap((p) => p.photos);
-  const photo = photos.find((p) => p.slug === slug);
-  if (!photo) return <p>Foto no encontrada</p>;
+  const background = location.state?.background;
+  const projectSlug = location.state?.projectSlug;
+
+  // const photos = allProjects.flatMap((p) => p.photos);
+  // const photo = photos.find((p) => p.slug === slug);
+  // if (!photo) return <p>Foto no encontrada</p>;
+
+  const project = allProjects.find((p) => p.slug === projectSlug);
+  if (!project) return null;
+
+  const photos = project.photos;
+  const initialIndex = photos.findIndex((p) => p.slug === slug);
 
   const handleClose = () => {
     if (background) {
@@ -30,11 +39,7 @@ export default function ProjectDetail() {
         className="relative max-w-lg max-h-lg"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
-          src={photo.src}
-          alt={photo.alt}
-          className="max-w-full max-h-full object-contain"
-        />
+        <CarouselImg photos={photos} initialIndex={initialIndex} />
       </div>
       <button
         className="absolute top-4 right-4 text-white text-2xl"

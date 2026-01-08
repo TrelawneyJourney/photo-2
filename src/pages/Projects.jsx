@@ -16,7 +16,7 @@ export default function Projects() {
         images={projects.photos}
         onItemClick={(item) =>
           navigate(`/photoitem/${item.slug}`, {
-            state: { background: location },
+            state: { background: location, projectSlug: projects.slug },
           })
         }
       />
