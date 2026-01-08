@@ -6,14 +6,14 @@ export default function PhotoGrid({ images, onItemClick }) {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[1fr_0.7fr_1fr] gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-[1fr_0.7fr_1fr] gap-1 md:gap-3">
       {rows.map((row, rowIndex) => {
         const isReversed = rowIndex % 2 !== 0;
 
         return (
           <div
             key={rowIndex}
-            className={`grid gap-3 ${
+            className={`grid gap-1 ${
               isReversed ? "grid-cols-[0.7fr_1fr]" : "grid-cols-[1fr_0.7fr]"
             } md:contents`}
           >
