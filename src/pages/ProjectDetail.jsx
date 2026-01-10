@@ -32,7 +32,7 @@ export default function ProjectDetail() {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center py-8"
+      className="fixed inset-0 z-50 bg-neutral-900/90 flex items-center justify-center py-8"
       onClick={handleClose}
     >
       <div
