@@ -11,15 +11,30 @@ export default function ProjectDetail() {
 
   const background = location.state?.background;
   const projectSlug = location.state?.projectSlug;
+  const mode = location.state?.mode;
 
   // const photos = allProjects.flatMap((p) => p.photos);
   // const photo = photos.find((p) => p.slug === slug);
   // if (!photo) return <p>Foto no encontrada</p>;
 
-  const project = allProjects.find((p) => p.slug === projectSlug);
-  if (!project) return null;
+  let photos = [];
 
-  const photos = project.photos;
+  if (mode === "global") {
+    photos = allProjects.flatMap((p) => p.photos);
+  } else if (mode === "project") {
+    const project = allProjects.find((p) => p.slug === projectSlug);
+
+    if (!project) return null;
+    photos = project.photos;
+  } else {
+    return null;
+  }
+
+  // const project = allProjects.find((p) => p.slug === projectSlug);
+  // if (!project) return null;
+
+  // const photos = project.photos;
+
   const initialIndex = photos.findIndex((p) => p.slug === slug);
 
   const handleClose = () => {
@@ -42,7 +57,7 @@ export default function ProjectDetail() {
         <CarouselImg photos={photos} initialIndex={initialIndex} />
       </div>
       <button
-        className="absolute top-4 right-4 text-white text-2xl"
+        className="absolute top-4 right-4 text-white text-2xl z-50"
         onClick={handleClose}
       >
         <CrossIcon />
