@@ -13,9 +13,19 @@ export default function ProjectDetail() {
   const projectSlug = location.state?.projectSlug;
   const mode = location.state?.mode;
 
-  // const photos = allProjects.flatMap((p) => p.photos);
-  // const photo = photos.find((p) => p.slug === slug);
-  // if (!photo) return <p>Foto no encontrada</p>;
+  const handleSlideChange = (swiper) => {
+    const currentPhoto = photos[swiper.activeIndex];
+    if (!currentPhoto) return;
+
+    navigate(`/photoitem/${currentPhoto.slug}`, {
+      replace: true,
+      state: {
+        background,
+        mode,
+        projectSlug,
+      },
+    });
+  };
 
   let photos = [];
 
@@ -30,11 +40,6 @@ export default function ProjectDetail() {
     return null;
   }
 
-  // const project = allProjects.find((p) => p.slug === projectSlug);
-  // if (!project) return null;
-
-  // const photos = project.photos;
-
   const initialIndex = photos.findIndex((p) => p.slug === slug);
 
   const handleClose = () => {
@@ -47,14 +52,18 @@ export default function ProjectDetail() {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-neutral-900/90 flex items-center justify-center py-8"
+      className="fixed inset-0 z-50 bg-neutral-900 flex items-center justify-center py-8"
       onClick={handleClose}
     >
       <div
-        className="relative max-w-lg max-h-lg"
+        className="relative w-full h-full"
         onClick={(e) => e.stopPropagation()}
       >
-        <CarouselImg photos={photos} initialIndex={initialIndex} />
+        <CarouselImg
+          photos={photos}
+          initialIndex={initialIndex}
+          onSlideChange={handleSlideChange}
+        />
       </div>
       <button
         className="absolute top-4 right-4 text-white text-2xl z-50"

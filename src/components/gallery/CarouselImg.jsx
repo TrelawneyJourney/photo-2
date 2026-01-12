@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function CarouselImg({ photos, initialIndex }) {
+export default function CarouselImg({ photos, initialIndex, onSlideChange }) {
   return (
     <Swiper
       modules={[Navigation, Keyboard, Pagination, Mousewheel]}
@@ -14,6 +14,7 @@ export default function CarouselImg({ photos, initialIndex }) {
       mousewheel={true}
       keyboard={{ enabled: true }}
       initialSlide={initialIndex}
+      onSlideChange={onSlideChange}
       spaceBetween={30}
       className="h-screen w-full [--swiper-navigation-color:#9ca3af]
     [--swiper-pagination-color:white]"
