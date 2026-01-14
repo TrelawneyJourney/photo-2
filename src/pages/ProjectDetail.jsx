@@ -2,6 +2,7 @@ import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { allProjects } from "../data/projects";
 import { icons } from "../assets/icons";
 import CarouselImg from "../components/gallery/CarouselImg";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProjectDetail() {
   const CrossIcon = icons.Cross;
@@ -51,26 +52,35 @@ export default function ProjectDetail() {
   };
 
   return (
-    <div
-      className="fixed inset-0 z-50 bg-neutral-900 flex items-center justify-center py-8"
-      onClick={handleClose}
-    >
-      <div
-        className="relative w-full h-full"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <CarouselImg
-          photos={photos}
-          initialIndex={initialIndex}
-          onSlideChange={handleSlideChange}
-        />
-      </div>
-      <button
-        className="absolute top-4 right-4 text-white text-2xl z-50"
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 z-50 bg-neutral-900 flex items-center justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         onClick={handleClose}
       >
-        <CrossIcon />
-      </button>
-    </div>
+        <motion.div
+          className="relative w-full h-full"
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.95, opacity: 0 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <CarouselImg
+            photos={photos}
+            initialIndex={initialIndex}
+            onSlideChange={handleSlideChange}
+          />
+        </motion.div>
+        <button
+          className="absolute top-4 right-4 text-white text-2xl z-50"
+          onClick={handleClose}
+        >
+          <CrossIcon />
+        </button>
+      </motion.div>
+    </AnimatePresence>
   );
 }
