@@ -16,7 +16,7 @@ import { useState } from "react";
 
 const variants = {
   enter: (direction) => ({
-    x: direction > 0 ? 120 : -120,
+    x: direction > 0 ? 20 : -20,
     opacity: 0,
     scale: 0.95,
   }),
@@ -26,7 +26,7 @@ const variants = {
     scale: 1,
   },
   exit: (direction) => ({
-    x: direction > 0 ? -120 : 120,
+    x: direction > 0 ? -20 : 20,
     opacity: 0,
     scale: 0.95,
   }),
@@ -57,7 +57,6 @@ export default function CarouselImg({ photos, initialIndex, onSlideChange }) {
       }}
       initialSlide={initialIndex}
       onSlideChange={handleOnSlideChange}
-      spaceBetween={30}
       className="h-screen w-full [--swiper-navigation-color:#9ca3af]
     [--swiper-pagination-color:white]"
     >
@@ -77,7 +76,7 @@ export default function CarouselImg({ photos, initialIndex, onSlideChange }) {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  transition={{ duration: 0.85, ease: "easeOut" }}
+                  transition={{ duration: 0.85, ease: "easeInOut" }}
                 />
               )}
             </AnimatePresence>
