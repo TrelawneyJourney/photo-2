@@ -1,60 +1,52 @@
 export default function ContactForm() {
   return (
-    <form action="" method="post" className="max-w-[900px] ">
-      <div className="grid grid-cols-2">
-        <div className="">
-          <label for="name" className="font-light tracking-widest sr-only">
-            Nombre
-          </label>
-          <input
-            type="name"
-            name="name"
-            id="name"
-            placeholder="Nombre"
-            className="w-full py-3 px-2 bg-transparent border border-neutral-300 border-r-0 text-neutral-800 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
-          />
-        </div>
+    <form action="" method="post">
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <label for="name" className="font-light tracking-widest sr-only">
+          Nombre
+        </label>
+        <input
+          type="name"
+          name="name"
+          id="name"
+          placeholder="Nombre"
+          className="w-full py-3 px-2 bg-transparent border md:border-r-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
+        />
 
-        <div className="">
-          <label for="email" className="font-light tracking-widest sr-only">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-            className="w-full py-3 px-2 bg-transparent border border-neutral-300 text-neutral-800 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
-          />
-        </div>
+        <label for="email" className="font-light tracking-widest sr-only">
+          Email
+        </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          className="w-full py-3 px-2 bg-transparent border border-y-0 md:border-y border-neutral-300 text-neutral-800 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
+        />
 
-        <div className="">
-          <label for="telefono" className="font-light tracking-widest sr-only">
-            Telefóno
-          </label>
-          <input
-            type="tel"
-            name="telefono"
-            id="telefono"
-            placeholder="Telefóno"
-            className="w-full py-3 px-2 bg-transparent border border-y-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
-          />
-        </div>
+        <label for="telefono" className="font-light tracking-widest sr-only">
+          Telefóno
+        </label>
+        <input
+          type="tel"
+          name="telefono"
+          id="telefono"
+          placeholder="Telefóno"
+          className="w-full py-3 px-2 bg-transparent border md:border-y-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
+        />
 
-        <div className="">
-          <label for="asunto" className="font-light tracking-widest sr-only">
-            Asunto
-          </label>
-          <input
-            type="text"
-            name="asunto"
-            id="asunto"
-            placeholder="Asunto"
-            className="w-full py-3 px-2 bg-transparent text-neutral-800 border-r border-neutral-300 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
-          />
-        </div>
+        <label for="asunto" className="font-light tracking-widest sr-only">
+          Asunto
+        </label>
+        <input
+          type="text"
+          name="asunto"
+          id="asunto"
+          placeholder="Asunto"
+          className="w-full py-3 px-2 bg-transparent text-neutral-800 border-x md:border-l-0 border-neutral-300 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
+        />
 
-        <div className="col-span-2">
+        <div className="md:col-span-2">
           <label for="message" class="font-light tracking-widest sr-only">
             Mensaje
           </label>
