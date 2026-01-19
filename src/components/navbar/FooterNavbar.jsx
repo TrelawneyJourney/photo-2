@@ -3,6 +3,7 @@ import { icons } from "../../assets/icons";
 export default function FooterNavbar() {
   const InstaIcon = icons.Instagram;
   const LinkedinIcon = icons.Linkedin;
+  const WhatsappIcon = icons.Whatsapp;
   return (
     <div className="flex items-center gap-2 mt-7">
       <a
@@ -13,7 +14,7 @@ export default function FooterNavbar() {
         <InstaIcon />
       </a>
       <a href="#" target="_blank" rel="noopener noreferrer">
-        <LinkedinIcon />
+        <WhatsappIcon />
       </a>
     </div>
   );

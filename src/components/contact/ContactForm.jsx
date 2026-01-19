@@ -10,7 +10,7 @@ export default function ContactForm() {
           name="name"
           id="name"
           placeholder="Nombre"
-          className="w-full py-3 px-2 bg-transparent border md:border-r-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
+          className="w-full py-3 px-2 bg-transparent border md:border-r-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
         />
 
         <label for="email" className="font-light tracking-widest sr-only">
@@ -21,7 +21,7 @@ export default function ContactForm() {
           name="email"
           id="email"
           placeholder="Email"
-          className="w-full py-3 px-2 bg-transparent border border-y-0 md:border-y border-neutral-300 text-neutral-800 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
+          className="w-full py-3 px-2 bg-transparent border border-y-0 md:border-y border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
         />
 
         <label for="telefono" className="font-light tracking-widest sr-only">
@@ -32,7 +32,7 @@ export default function ContactForm() {
           name="telefono"
           id="telefono"
           placeholder="Telefóno"
-          className="w-full py-3 px-2 bg-transparent border md:border-y-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
+          className="w-full py-3 px-2 bg-transparent border md:border-y-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
         />
 
         <label for="asunto" className="font-light tracking-widest sr-only">
@@ -43,7 +43,7 @@ export default function ContactForm() {
           name="asunto"
           id="asunto"
           placeholder="Asunto"
-          className="w-full py-3 px-2 bg-transparent text-neutral-800 border-x md:border-l-0 border-neutral-300 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
+          className="w-full py-3 px-2 bg-transparent text-neutral-800 border-x md:border-l-0 border-neutral-300 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
         />
 
         <div className="md:col-span-2">
@@ -55,7 +55,7 @@ export default function ContactForm() {
             id="message"
             placeholder="Contame un poco sobre el proyecto o la idea que tenés en mente."
             rows={6}
-            className="w-full py-3 px-2 bg-transparent border border-neutral-300 text-neutral-800 font-light tracking-wide focus:outline-none focus:border-neutral-900 transition"
+            className="w-full py-3 px-2 bg-transparent border border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
           ></textarea>
         </div>
       </div>
