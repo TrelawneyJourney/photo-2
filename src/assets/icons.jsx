@@ -28,7 +28,7 @@ export const icons = {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth="1.5"
-      className={`stroke-white drop-shadow-xs drop-shadow-black w-8 h-8  cursor-pointer ${className}`}
+      className={`stroke-white drop-shadow-xs drop-shadow-black w-8 h-8 cursor-pointer ${className}`}
     >
       {/* Diagonal 1 */}
       <path
@@ -66,7 +66,7 @@ export const icons = {
       viewBox="0 0 24 24"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
-      className="fill-neutral-500 cursor-pointer w-5 hover:fill-neutral-700"
+      className="fill-neutral-500 cursor-pointer w-5 hover:fill-slate-950"
     >
       <path
         fillRule="evenodd"
@@ -101,6 +101,7 @@ export const icons = {
       viewBox="0 0 32 32"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
+      className="hover:fill-slate-950"
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 

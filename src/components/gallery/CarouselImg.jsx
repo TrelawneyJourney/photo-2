@@ -1,12 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Keyboard,
-  Pagination,
-  Mousewheel,
-  Zoom,
-} from "swiper/modules";
-import { motion, AnimatePresence, scale } from "framer-motion";
+import { Navigation, Keyboard, Mousewheel, Zoom } from "swiper/modules";
+import { motion, AnimatePresence } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -45,9 +39,8 @@ export default function CarouselImg({ photos, initialIndex, onSlideChange }) {
 
   return (
     <Swiper
-      modules={[Navigation, Keyboard, Pagination, Mousewheel, Zoom]}
+      modules={[Navigation, Keyboard, Mousewheel, Zoom]}
       navigation={true}
-      pagination={true}
       mousewheel={{ forceToAxis: true }}
       keyboard={{ enabled: true }}
       zoom={{

@@ -54,7 +54,7 @@ export default function Navbar({ onClickMobile }) {
                         className={({ isActive }) =>
                           `block text-sm transition-opacity ${
                             isActive
-                              ? "opacity-100 text-amber-600"
+                              ? "opacity-100 text-slate-950 font-semibold"
                               : "opacity-50 hover:opacity-80"
                           }`
                         }
@@ -73,7 +73,7 @@ export default function Navbar({ onClickMobile }) {
                 className={({ isActive }) =>
                   `text-xs uppercase tracking-widest transition-opacity ${
                     isActive
-                      ? "opacity-100 text-amber-600"
+                      ? "opacity-100 text-slate-950 font-semibold"
                       : "opacity-60 hover:opacity-100"
                   }`
                 }
