@@ -13,6 +13,7 @@ export default function Contact() {
           name="description"
           content="Contactá a Gala fotografía para consultas, proyectos o colaboraciones."
         />
+        {/* <link rel="canonical" href="https://galafotografia.com/contact" /> */}
       </Helmet>
 
       <main>

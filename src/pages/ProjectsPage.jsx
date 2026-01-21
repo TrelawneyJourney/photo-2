@@ -29,6 +29,7 @@ export default function ProjectsPage() {
           name="description"
           content="Galería de proyectos fotográficos de Gala Fotografía. Series visuales y trabajos seleccionados."
         />
+        {/* <link rel="canonical" href="https://galafotografia.com/projects/${projects.slug}" /> */}
       </Helmet>
       <main>
         <PhotoGrid images={projects.photos} onItemClick={handleItemClick} />

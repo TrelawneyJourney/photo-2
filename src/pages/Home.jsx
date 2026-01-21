@@ -32,6 +32,7 @@ export default function Home() {
           name="description"
           content="Portfolio de fotografía y proyectos visuales de Gala Peralta Rosas. Exploración artística, estética y narrativa."
         />
+        {/* <link rel="canonical" href="https://galafotografia.com/home" /> */}
       </Helmet>
       <main>
         <PhotoGrid images={projects} onItemClick={handleItemClick} />

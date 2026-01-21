@@ -12,6 +12,7 @@ export default function About() {
           name="description"
           content="Conocé a Gala Peralta Rosas, fotógrafa enfocada en proyectos visuales y exploración artística."
         />
+        {/* <link rel="canonical" href="https://galafotografia.com/about" /> */}
       </Helmet>
 
       <main>
