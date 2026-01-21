@@ -2,7 +2,7 @@ export default function ContactForm() {
   return (
     <form action="" method="post">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <label for="name" className="font-light tracking-widest sr-only">
+        <label htmlFor="name" className="sr-only">
           Nombre
         </label>
         <input
@@ -13,7 +13,7 @@ export default function ContactForm() {
           className="w-full py-3 px-2 bg-transparent border md:border-r-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
         />
 
-        <label for="email" className="font-light tracking-widest sr-only">
+        <label htmlFor="email" className="sr-only">
           Email
         </label>
         <input
@@ -24,7 +24,7 @@ export default function ContactForm() {
           className="w-full py-3 px-2 bg-transparent border border-y-0 md:border-y border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
         />
 
-        <label for="telefono" className="font-light tracking-widest sr-only">
+        <label htmlFor="telefono" className="sr-only">
           Telefóno
         </label>
         <input
@@ -35,7 +35,7 @@ export default function ContactForm() {
           className="w-full py-3 px-2 bg-transparent border md:border-y-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
         />
 
-        <label for="asunto" className="font-light tracking-widest sr-only">
+        <label htmlFor="asunto" className="sr-only">
           Asunto
         </label>
         <input
@@ -47,7 +47,7 @@ export default function ContactForm() {
         />
 
         <div className="md:col-span-2">
-          <label for="message" class="font-light tracking-widest sr-only">
+          <label htmlFor="message" className="sr-only">
             Mensaje
           </label>
           <textarea

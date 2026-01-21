@@ -21,7 +21,7 @@ export default function PhotoGrid({ images, onItemClick }) {
               <button
                 key={item.id}
                 onClick={() => onItemClick?.(item)}
-                className="group overflow-hidden "
+                className="group overflow-hidden"
               >
                 {/* auto-rows-min aspect-[3/4] */}
                 <img
@@ -38,4 +38,3 @@ export default function PhotoGrid({ images, onItemClick }) {
     </div>
   );
 }
-// "grid grid-cols-[1fr_0.7fr] md:grid-cols-[1fr_0.7fr_1fr] gap-3

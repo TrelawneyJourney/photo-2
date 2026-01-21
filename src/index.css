@@ -1,11 +1,1 @@
 @import "tailwindcss";
-
-@layer utilities {
-  .swiper-pagination-bullet {
-    background: white;
-    opacity: 0.25;
-  }
-  .swiper-pagination-bullet-active {
-    opacity: 1;
-  }
-}

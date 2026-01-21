@@ -4,7 +4,7 @@ import { icons } from "../assets/icons";
 import CarouselImg from "../components/gallery/CarouselImg";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function ProjectDetail() {
+export default function PhotoModal() {
   const CrossIcon = icons.Cross;
   const { slug } = useParams();
   const navigate = useNavigate();
