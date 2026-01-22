@@ -6,7 +6,7 @@ export default function AboutText() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.8 }}
       className="max-w-5xl mx-auto px-6 py-10 md:py-20 "
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 text-sm leading-relaxed text-neutral-600">
