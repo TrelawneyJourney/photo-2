@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
+import AboutHero from "../components/about/AboutHero";
+import AboutText from "../components/about/AboutText";
 
 export default function About() {
   const location = useLocation();
@@ -15,9 +17,10 @@ export default function About() {
         {/* <link rel="canonical" href="https://galafotografia.com/about" /> */}
       </Helmet>
 
-      <main>
-        <h1>Acerca de mí</h1>
-        <h2>Gala Peralta Rosas</h2>
+      <main className="min-h-screen">
+        {/* <h1 className="text-4xl md:text-5xl mb-4">Acerca de mí</h1> */}
+        <AboutHero />
+        <AboutText />
       </main>
     </>
   );
