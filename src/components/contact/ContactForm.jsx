@@ -1,50 +1,113 @@
+import { useState } from "react";
+import { validate } from "./validate";
+
 export default function ContactForm() {
+  const [status, setStatus] = useState("idle");
+  const [errors, setErrors] = useState({});
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    const formData = new FormData(e.target);
+    const values = Object.fromEntries(formData);
+
+    const validationErrors = validate(values);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      setStatus("idle");
+      return;
+    }
+    setErrors({});
+
+    setTimeout(() => {
+      setStatus("success");
+      e.target.reset();
+    }, 1000);
+  };
+
   return (
-    <form action="" method="post">
+    <form action="" method="post" noValidate onSubmit={handleSubmit}>
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <label htmlFor="name" className="sr-only">
-          Nombre
-        </label>
-        <input
-          type="name"
-          name="name"
-          id="name"
-          placeholder="Nombre"
-          className="w-full py-3 px-2 bg-transparent border md:border-r-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
-        />
+        <div>
+          <label htmlFor="name" className="sr-only">
+            Nombre
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            minLength={2}
+            autoComplete="name"
+            placeholder="Nombre"
+            className="input"
+            aria-invalid={!!errors.name}
+            aria-describedby={errors.name ? "name-error" : undefined}
+          />
+          {errors.name && (
+            <p
+              id="name-error"
+              role="alert"
+              className="text-red-500 text-xs mb-2"
+            >
+              {errors.name}
+            </p>
+          )}
+        </div>
 
-        <label htmlFor="email" className="sr-only">
-          Email
-        </label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email"
-          className="w-full py-3 px-2 bg-transparent border border-y-0 md:border-y border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
-        />
+        <div>
+          <label htmlFor="email" className="sr-only">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            autoComplete="email"
+            placeholder="Email"
+            className="input"
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "email-error" : undefined}
+          />
+          {errors.email && (
+            <p
+              id="email-error"
+              role="alert"
+              className="text-red-500 text-xs mb-2"
+            >
+              {errors.email}
+            </p>
+          )}
+        </div>
 
-        <label htmlFor="telefono" className="sr-only">
-          Telefóno
-        </label>
-        <input
-          type="tel"
-          name="telefono"
-          id="telefono"
-          placeholder="Telefóno"
-          className="w-full py-3 px-2 bg-transparent border md:border-y-0 border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
-        />
+        <div>
+          <label htmlFor="telefono" className="sr-only">
+            Telefóno
+          </label>
+          <input
+            type="tel"
+            name="telefono"
+            id="telefono"
+            autoComplete="tel"
+            placeholder="Telefóno"
+            className="input"
+          />
+        </div>
 
-        <label htmlFor="asunto" className="sr-only">
-          Asunto
-        </label>
-        <input
-          type="text"
-          name="asunto"
-          id="asunto"
-          placeholder="Asunto"
-          className="w-full py-3 px-2 bg-transparent text-neutral-800 border-x md:border-l-0 border-neutral-300 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
-        />
+        <div>
+          <label htmlFor="asunto" className="sr-only">
+            Asunto
+          </label>
+          <input
+            type="text"
+            name="asunto"
+            id="asunto"
+            placeholder="Asunto"
+            className="input"
+          />
+        </div>
 
         <div className="md:col-span-2">
           <label htmlFor="message" className="sr-only">
@@ -53,19 +116,43 @@ export default function ContactForm() {
           <textarea
             name="message"
             id="message"
-            placeholder="Contame un poco sobre el proyecto o la idea que tenés en mente."
             rows={6}
-            className="w-full py-3 px-2 bg-transparent border border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors"
+            required
+            minLength={10}
+            placeholder="Contame un poco sobre el proyecto o la idea que tenés en mente."
+            className="input"
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? "message-error" : undefined}
           ></textarea>
+          {errors.message && (
+            <p
+              id="message-error"
+              role="alert"
+              className="text-red-500 text-xs mb-2"
+            >
+              {errors.message}
+            </p>
+          )}
         </div>
       </div>
 
       <button
         type="submit"
-        className="md:w-32 bg-neutral-900 text-white text-sm tracking-widest uppercase py-3 px-8 mt-3 hover:bg-neutral-500 transition ease-in-out duration-300"
+        disabled={status === "loading"}
+        aria-busy={status === "loading"}
+        className="bg-neutral-900 text-white text-sm tracking-widest uppercase py-3 px-8 mt-3 hover:bg-neutral-500 transition ease-in-out duration-300"
       >
-        Enviar
+        {status === "loading" ? "Enviando..." : "Enviar mensaje"}
       </button>
+
+      <div aria-live="polite">
+        {status === "success" && (
+          <p className="text-green-600 mt-2">Mensaje enviado correctamente.</p>
+        )}
+        {status === "error" && (
+          <p className="text-red-600">Ocurrió un error. Intenta más tarde.</p>
+        )}
+      </div>
     </form>
   );
 }

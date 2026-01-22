@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@layer components {
+  .input {
+    @apply w-full py-3 px-2 bg-transparent border border-neutral-300 text-neutral-800 font-light tracking-wide focus:border focus:border-neutral-700 transition-colors;
+  }
+}
