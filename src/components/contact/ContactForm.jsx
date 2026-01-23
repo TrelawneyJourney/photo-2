@@ -28,7 +28,7 @@ export default function ContactForm() {
 
   return (
     <form action="" method="post" noValidate onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0.5">
         <div>
           <label htmlFor="name" className="sr-only">
             Nombre
